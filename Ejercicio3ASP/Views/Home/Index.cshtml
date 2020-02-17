@@ -1,0 +1,56 @@
+﻿@model Datacs
+<h1>EJERCICIO 3: Dealer</h1>
+ <div class="row">
+     @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+     {
+         @Html.AntiForgeryToken()
+         <div class="">
+
+             @Html.TextBoxFor(x => x.ID,
+                new { @class = "form-control", placeholder = "ID", type = "number" })
+             @Html.ValidationMessageFor(x => x.ID, null, new { @class = "txt" })
+             <br />
+             @Html.TextBoxFor(x => x.NOMBRE,
+                new { @class = "form-control", placeholder = "nombre", type = "text" })
+             @Html.ValidationMessageFor(x => x.NOMBRE, null, new { @class = "txt" })
+             <br />
+             @Html.TextBoxFor(x => x.COLOR,
+                    new { @class = "form-control", placeholder = "Color", type = "text" })
+             @Html.ValidationMessageFor(x => x.COLOR, null, new { @class = "txt" })
+             <br />
+             @Html.TextBoxFor(x => x.MARCA,
+                    new { @class = "form-control", placeholder = "Marca", type = "text" })
+             @Html.ValidationMessageFor(x => x.MARCA, null, new { @class = "txt" })
+             <br />
+             @Html.TextBoxFor(x => x.CHASIS,
+                    new { @class = "form-control", placeholder = "Chasis", type = "text" })
+             @Html.ValidationMessageFor(x => x.CHASIS, null, new { @class = "txt" })
+             <br />
+
+             <button class="btn btn-primary" id="btn" type="submit">
+                 Registrar Vehiculo
+             </button>
+         </div>
+
+     }
+     <div style="margin:5%">
+         <h4>Datos Vehiculos</h4>
+         <table style="border:inset" class="table table-striped">
+             <td style="border:black 2px solid;">ID</td>
+             <td style="border:black 2px solid;">NOMBRE</td>
+             <td style="border:black 2px solid;">COLOR</td>
+             <td style="border:black 2px solid;">MARCA</td>
+             <td style="border:black 2px solid;">CHASIS</td>
+            
+             <tr style="border:black 3px;">
+
+                     <td style="border:black 2px solid;">@ViewData["ID"]</td>
+                     <td style="border:black 2px solid;">@ViewData["NOMBRE"]</td>
+                     <td style="border:black 2px solid;">@ViewData["COLOR"]</td>
+                     <td style="border:black 2px solid;">@ViewData["MARCA"]</td>
+                     <td style="border:black 2px solid;">@ViewData["CHASIS"]</td>
+                 
+
+             </tr>
+         </table>
+      </div>
